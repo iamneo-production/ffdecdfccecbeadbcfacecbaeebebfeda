@@ -49,9 +49,7 @@
         <div *ngIf = "t.count > 1">
           <p>{{t.name}} {{t.calory}} x {{t.count}} </p> 
         </div>
-        <!-- <div *ngIf = "t.count < 1">
-          <p>{{t.name}} {{t.calory}} </p> 
-        </div> -->
+        
         
     </li>  
   </ul> 
@@ -60,7 +58,7 @@
 <br>
 <div id = "displayContainer">
   <div  class = "arrange" *ngFor="let f of fruit" >
-    <!-- let name_val = {{f.name}}  -->
+    
     <div >
       <p id="name">Name: {{f.name}}</p><br>
       <p id="calories">Calory: {{f.calory}}</p><br>
