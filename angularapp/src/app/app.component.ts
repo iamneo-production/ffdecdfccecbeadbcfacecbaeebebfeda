@@ -1,11 +1,11 @@
 import { Component,OnInit} from '@angular/core';
 interface Fruits{
-    name:string
+    name:string;
     calory:number;
     image: any;
 }
 interface Today{
-  name:string
+  name:string;
   calory:number;
   image: any;
   count : number;
@@ -26,8 +26,8 @@ export class AppComponent implements OnInit {
   calory1: string = '';
   image1:any; 
   count1 : string='';
-  cal_val :number = 0
-  search :string = ''
+  cal_val :number = 0;
+  search :string = '';
   openform(){
     this.visible = true;
   }

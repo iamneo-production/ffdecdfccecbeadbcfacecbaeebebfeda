@@ -4,13 +4,7 @@
 
 <div id="searchBox">
   <p>Search</p>
-  <input #box (keyup)="onKey(box.value)" [(ngModel)]="searchText">
-    
-      <div *ngFor="let f of fruit | foodFilter: searchText">
-          {{f.name}} - {{ f.calory}} calories
-      </div>
-      <!-- <li *ngFor="let food of foodItems">{{ food.name }} - {{ food.calories }} calories</li> -->
-    
+  <input #box (keyup)="onKey(box.value)">
 </div>
 <div>
 <button (click) = "openform()" id= "newFood">Add New Food</button>
@@ -32,12 +26,11 @@
         <label><i>Image </i></label>
         <input type="url" #image1 >
       </div>
-
     </div>
     <br>
-    <button id ="button" (click) = "storevalue(name1.value,calory1.value,image1.value)">Add</button>
+    <button id ="button" (onClick) = "storevalue(name1.value,calory1.value,image1.value)">Add</button>
     <br>
-    <button id ="button" (click) = "closeform()">Submit</button>
+    <button id ="button" (onClick) = "closeform()">Submit</button>
   </div>
 </form>
 
@@ -49,7 +42,9 @@
         <div *ngIf = "t.count > 1">
           <p>{{t.name}} {{t.calory}} x {{t.count}} </p> 
         </div>
-        
+        <div *ngIf = "t.count <= 1">
+          <p>{{t.name}} {{t.calory}} </p> 
+        </div>
         
     </li>  
   </ul> 
@@ -58,14 +53,15 @@
 <br>
 <div id = "displayContainer">
   <div  class = "arrange" *ngFor="let f of fruit" >
-    
+    let name_val = f.name
     <div >
-      <p id="name">Name: {{f.name}}</p><br>
-      <p id="calories">Calory: {{f.calory}}</p><br>
-      <img id="image" [src] = "f.image" alt = "dfb" style="width: 600px;height: 400px;">
+      <p>Name: {{f.name}}</p><br>
+      <p>Calory: {{f.calory}}</p><br>
+      <img [src] = "f.image" alt = "dfb" style="width: 600px;height: 400px;">
       <input type="number" #count1>
-      <button (click) = "add(count1.value)" id= "newFood">Add</button>
+      <button (onclick) = "add(count1.value)" id= "newFood">Add</button>
     </div>
     
   </div>  
 </div>
+
