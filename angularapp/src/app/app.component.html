@@ -1,62 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
-</head>
-<body>
-<header id="headerContainer">
-<span>Calory Tracker</span>
-</header>
+<div id= "headerContainer">
+    <p><b>Calory Tracker</b></p>
+  </div>
+  
+  <div id="searchBox">
+    <p>Search</p>
+    <input #box (keyup)="onKey(box.value)">
+  </div>
 <div>
-<div class="search">
-<span>Search</span>
-<input type="text" id="searchBox" #searchText (input)="searchText">
+  <button (click) = "openform()" id= "newFood">Add New Food</button>
 </div>
+  <form >
+    <div *ngIf = 'visible'>
+      <div class = "wrap">
+        <div id = "name">
+          <label><i>Name </i></label>
+          <input type="text" #name1 >
+        </div>
+        <br>
+        <div id = "calories">
+          <label><i>Calories </i></label>
+          <input type="text" #calory1 >
+        </div>
+        <br>
+        <div id = "image">
+          <label><i>Image </i></label>
+          <input type="url" #image1 >
+        </div>
+      </div>
+      <br>
+      <button id ="button" (onClick) = "storevalue(name1.value,calory1.value,image1.value)">Add</button>
+      <br>
+      <button id ="button" (onClick) = "closeform()">Submit</button>
+    </div>
+  </form>
+  
+  <div id = "totalCalories">
+    <p>Today's food {{cal_val}} cal </p>
+    <ul *ngFor = "let t of today">
+      <li>
+        
+          <div *ngIf = "t.count > 1">
+            <p>{{t.name}} {{t.calory}} x {{t.count}} </p> 
+          </div>
+          <div *ngIf = "t.count <= 1">
+            <p>{{t.name}} {{t.calory}} </p> 
+          </div>
+          
+      </li>  
+    </ul> 
+    
+  </div>
+  <br>
+  <div id = "displayContainer">
+    <div  class = "arrange" *ngFor="let f of fruit" >
+      let name_val = f.name
+      <div >
+        <p>Name: {{f.name}}</p><br>
+        <p>Calory: {{f.calory}}</p><br>
+        <img [src] = "f.image" alt = "dfb" style="width: 600px;height: 400px;">
+        <input type="number" #count1>
+        <button (onclick) = "add(count1.value)" id= "newFood">Add</button>
+      </div>
+      
+    </div>  
+  </div>
 
-<div id="totalCalories">
-<span>Today’s Foods {{totalCal}} cal</span>
-<ul *ngFor="let t of total">
-<li>{{t.name}} {{t.calory}} <span *ngIf="t.count>1">x{{t.count}}</span></li>
-</ul>
-</div>
-
-<form>
-<button (click)="set($event)" id="newFood">Add New Food</button>
-<ng-container *ngIf="hide">
-<div>
-<label for="name">Name</label>
-<input type="text" id="name" #name>
-</div>
-<div>
-<label for="calories">Calories</label>
-<input type="text" id="calories" #calory>
-</div>
-<div>
-<label for="image">Image</label>
-<input type="text" id="image" #image>
-</div>
-<button (click)="addFood($event,name.value,calory.value,image.value)">Submit</button>
-</ng-container>
-</form>
-
-<div id="displayContainer">
-<ng-container *ngFor="let food of foods | filter:searchText.value">
-<div class="card">
-<img src="{{food.image}}" alt="{{food.name}}">
-<div>
-<span>{{food.name}}</span>
-<span>Calory<span>-{{food.calory}}</span></span>
-<div>
-<input type="text" #count>
-<button (click)="add(food.name,food.calory,count.value)" id="newFood">Add</button>
-</div>
-</div>
-</div>
-</ng-container>
-</div>
-</div>
-</body>
-</html>
