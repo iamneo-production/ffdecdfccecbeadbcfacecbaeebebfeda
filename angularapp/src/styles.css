@@ -1,1 +1,97 @@
 /* You can add global styles to this file, and also import other style files */
+#headerContainer{
+    
+    border: 1px solid rgb(255, 77, 0);
+    padding: 10px;
+    margin: 10px;
+    background-color:rgb(255, 77, 0);
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: aliceblue;
+    font-style: italic;
+}
+#searchBox{
+    text-align: center;
+    
+}
+#newFood{
+    width:  100px;
+    border: 1px solid rgb(255, 77, 0);
+    padding: auto;
+    margin: 50px;
+    background-color:rgb(255, 77, 0);
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: aliceblue;
+    font-style: italic;
+    text-align: center;
+}
+.wrap{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0px;
+}
+#name{
+    margin:25px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: auto;
+    margin-bottom: 2px;
+    margin-left: 45px;
+}
+#calories{
+    margin:25px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: auto;
+    margin-bottom: 2px;
+    margin-left: 45px;
+}
+#image{
+    margin:25px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: auto;
+    margin-bottom: 2px;
+    margin-left: 45px;
+}
+#button{
+    margin:25px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: auto;
+    margin-bottom: 2px;
+    margin-left: 45px;
+    color: aliceblue;
+    font-style: italic;
+    text-align: center;
+    border: 1px solid rgb(255, 77, 0);
+    background-color:rgb(255, 77, 0);
+}
+#totalCalories{
+    position:absolute; 
+    right:170px; 
+    top:100px;
+
+
+}
+#displayContainer{
+    margin: auto;
+    border: 1px ;
+    border-style:solid;
+    border-radius: 15px;
+
+
+}
+
+
+.arrange{
+    margin: 50px;
+    margin-right: 400px;
+    border: 1px ;
+    border-style:solid;
+    border-radius: 15px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+}
+#totalCalories{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+}

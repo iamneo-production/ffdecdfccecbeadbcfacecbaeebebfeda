@@ -55,9 +55,9 @@
     <div  class = "arrange" *ngFor="let f of fruit" >
       let name_val = f.name
       <div >
-        <p>Name: {{f.name}}</p><br>
-        <p>Calory: {{f.calory}}</p><br>
-        <img [src] = "f.image" alt = "dfb" style="width: 600px;height: 400px;">
+        <p id= "name">Name: {{f.name}}</p><br>
+        <p id = "calories">Calory: {{f.calory}}</p><br>
+        <img id ="image" [src] = "f.image" alt = "dfb" style="width: 600px;height: 400px;">
         <input type="number" #count1>
         <button (onclick) = "add(count1.value)" id= "newFood">Add</button>
       </div>
